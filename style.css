@@ -1,0 +1,240 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  font-family: Gotham Rounded, sans-serif;
+  font-weight: normal;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background: #16222A;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #3A6073, #16222A);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #3A6073, #16222A); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.heading{
+  text-align: center;
+  color: #f4791f;
+  font-weight: bold;
+  background-color: #734b6d;
+  font-family: 'Dancing Script', cursive;
+ 
+}
+
+.calculator-grid {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  min-height: 100vh;
+  grid-template-columns: repeat(4, 100px);
+  grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+}
+
+.calculator-grid > button {
+  cursor: pointer;
+  font-size: 2rem;
+  border: 1px solid white;
+  outline: none;
+  background-color: rgba(255, 255, 255, .75);
+}
+
+.calculator-grid > button:hover {
+  background-color: rgba(255, 255, 255, .9);
+}
+
+.span-two {
+  grid-column: span 2;
+}
+
+.output {
+  grid-column: 1 / -1;
+  background-color: rgba(0, 0, 0, .75);
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  flex-direction: column;
+  padding: 10px;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+.output .previous-operand {
+  color: rgba(255, 255, 255, .75);
+  font-size: 1.5rem;
+}
+
+.output .current-operand {
+  color: white;
+  font-size: 2.5rem;
+}
+
+@media (max-width: 500px) {
+  
+  .calculator-grid {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    height: 100vh;
+    grid-template-columns: repeat(4, 75px);
+    grid-template-rows: minmax(90px, auto) repeat(5, 90px);
+  }
+}
+@media (max-width: 300px) {
+  
+  .calculator-grid {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    height: 100vh;
+    grid-template-columns: repeat(4, 60px);
+    grid-template-rows: minmax(80px, auto) repeat(5, 80px);
+  }
+}
+
+
+/* Button Styling*/
+
+.mybtn{
+  text-align: center;
+  padding: 20px 40px; 
+}
+
+.btn,
+.btn:link,
+.btn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 15px 40px;
+  display: inline-block;
+  border-radius: 100px;
+  transition: all .2s;
+  position: relative;
+  font-size: 1.6rem;
+  border: none;
+  cursor: pointer; 
+}
+.btn:hover {
+  transform: translateY(-10px);
+   box-shadow: 5px 5px 10px 10px #fff;
+
+}
+.btn:active, .btn:focus {
+  outline: none;
+  transform: translateY(-10px);
+  box-shadow: 5px 5px 10px 10px #fff;
+
+}
+.btn-white {
+  background-color: crimson;
+  color: white;
+
+}
+.btn::after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 200px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transform: all .4s;
+}
+.btn-white::after {
+  background-color: lime;
+}
+.btn:hover::after {
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0;
+}
+.btn:animated {
+  animation: moveInBottom .5s ease-out .75s;
+  animation-fill-mode: backwards;
+}
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-10px); 
+  }
+  80% {
+    transform: translateX(1px); 
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0); 
+  } 
+}
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10px); 
+  }
+  80% {
+    transform: translateX(-1px); 
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0); 
+  } 
+}
+
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+ /* End Button Styling */
+
+/* FOOTER */
+.panel-footer {
+  margin-top: 80px;
+  padding-top: 35px;
+  padding-bottom: 30px;
+  background: #29323c;  /* fallback for old browsers */
+  border-top: 0;
+  color: white;
+  align-items: center;
+  text-align: center;
+}
+.panel-footer div.row {
+  margin-bottom: 35px;
+}
+#hope, #quotes {
+  line-height: 2;
+}
+#hope > span, #quotes > span {
+  font-size: 20px;
+}
+#quotes p {
+  font-size: 20px;
+  line-height: 1.8;
+}
+#quote {
+  font-style: italic;
+  font-size: 18px;
+  margin-top: 10px;
+}
+#quote p:nth-child(2) {
+  margin-top: 25px;
+}
+/* END FOOTER */
+
+
+
+
+
+
+
+
+
+
+
